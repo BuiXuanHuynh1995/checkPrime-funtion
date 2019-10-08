@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function checkPrime(n) {
+        if (n<2){
+            return false;
+        } else {
+            for (let i=2;i<n;i++){
+                if (n%i===0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    var count=0;
+    var sum=0;
+    function displayPrime(n) {
+        if (checkPrime(n)==true){
+            document.write(n+"<br>");
+            sum+=n;
+            count++;
+        } else {
+            //document.write(n+" is not prime")
+        }
+    }
+
+    var number = Number(prompt("Please enter number"))
+    function printNumber(number) {
+        for (let i=1;i<number && count<20;i++){
+            displayPrime(i);
+        }
+    }
+   printNumber(number);
+    document.write("sum = "+ sum)
+
+</script>
+</body>
+</html>
